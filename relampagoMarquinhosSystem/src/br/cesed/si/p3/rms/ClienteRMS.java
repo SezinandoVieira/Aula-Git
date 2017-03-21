@@ -9,10 +9,16 @@ public final class ClienteRMS extends PessoaRMS {
 		this.codigoCliente = codigoCliente;
 	}
 
+	public ClienteRMS(String nome, byte idade, short cpf, EnderecoRMS endereco, int codigoCliente) {
+		super(nome, idade, cpf, endereco);
+		this.codigoCliente = codigoCliente;
+	}
+
 	/**
 	 * @return the codigoCliente
 	 */
-	public int getCodigoCliente() {
+	@Override
+	public int getId() {
 		return codigoCliente;
 	}
 
@@ -22,6 +28,7 @@ public final class ClienteRMS extends PessoaRMS {
 	public void setCodigoCliente(int codigoCliente) {
 		this.codigoCliente = codigoCliente;
 	}
+	
 	
 	
 	

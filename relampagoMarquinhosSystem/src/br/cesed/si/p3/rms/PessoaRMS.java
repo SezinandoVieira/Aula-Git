@@ -1,32 +1,28 @@
 package br.cesed.si.p3.rms;
 
-public abstract class PessoaRMS {
+/**
+ * @author Sezinando Vieira e Jefferson Miranda 
+ * 
+ * Classe pai, que serve de modelo para as classes Cliente e Funcionario
+ *
+ */
+public abstract class PessoaRMS implements IdentificavelRMS{
 
-	/**
-	 * @author Sezinando Vieira e Jefferson Miranda 
-	 *
-	 */
+	 private String nome;
+	 private byte idade;
+	 private short cpf;
+	 private EnderecoRMS endereco;
+
+	public PessoaRMS(String nome, byte idade, short cpf, EnderecoRMS endereco) {
+		this(nome,idade,cpf);
+		this.endereco = endereco;
+	}
 	
-	 protected String nome;
-	 protected byte idade;
-	 protected short cpf;
-	 protected EnderecoRMS endereco;
-	
-	 public PessoaRMS(String nome, byte idade, short cpf) {
-		
+	public PessoaRMS(String nome, byte idade, short cpf) {
 		this.nome = nome;
 		this.idade = idade;
 		this.cpf = cpf;
 	}
-	 
-	 
-
-	public PessoaRMS(EnderecoRMS endereco) {
-		super();
-		this.endereco = endereco;
-	}
-
-
 
 	/**
 	 * @return o nome da pessoa
@@ -69,7 +65,18 @@ public abstract class PessoaRMS {
 	public void setCpf(short cpf) {
 		this.cpf = cpf;
 	}
-	 
-	 
-	 
+
+	/**
+	 * @return the endereco
+	 */
+	public EnderecoRMS getEndereco() {
+		return endereco;
+	}
+
+	/**
+	 * @param endereco the endereco to set
+	 */
+	public void setEndereco(EnderecoRMS endereco) {
+		this.endereco = endereco;
+	}
 }
